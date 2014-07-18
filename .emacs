@@ -1,5 +1,8 @@
 (server-start)
 
+;; silence bell sound
+(setq visible-bell t)
+
 ;; disable menubar and scrollbar
 (menu-bar-mode -1)
 (setq scroll-bar-mode nil)
