@@ -98,7 +98,6 @@
         yaml-mode
         js2-mode
         rinari
-        ember-mode
         org-mode
         deft
         coffee-mode
