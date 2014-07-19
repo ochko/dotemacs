@@ -1,0 +1,10 @@
+*.elc
+/auto-save-list
+/tramp
+/.smex-items
+/tramp
+/bookmarks
+/.bookmark
+/eshell
+/el-get
+/elpa

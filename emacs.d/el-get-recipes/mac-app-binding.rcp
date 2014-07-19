@@ -1,0 +1,6 @@
+(:name mac-app-binding
+       :description "Emacs bindings for Mac OS X apps"
+       :website "https://github.com/ochko/mac-app-binding.el"
+       :type github
+       :pkgname "ochko/mac-app-binding.el"
+       :features mac-app-binding)
