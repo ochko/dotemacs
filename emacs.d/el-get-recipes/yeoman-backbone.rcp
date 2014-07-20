@@ -1,0 +1,6 @@
+(:name yeoman-backbone
+       :description "Navigating around yeoman backbone applications"
+       :website "https://github.com/ochko/yeoman-backbone.el"
+       :type github
+       :pkgname "ochko/yeoman-backbone.el"
+       :features yeoman-backbone)
