@@ -31,6 +31,7 @@
          flycheck
          js2-mode
          js2-refactor
+         yeoman-backbone
          rspec-mode
          rinari
          ember-mode
