@@ -100,6 +100,7 @@
   (when (file-directory-p user-elisp-dir)
     (add-to-list 'load-path user-elisp-dir)
     (require 'el-get-initializer)
+    (require 'setup-hippie)
     (require 'handy-dandy-functions)))
 
 ;; ag
@@ -131,6 +132,29 @@
 (global-set-key (kbd "C-x , a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-x , e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-x , d") 'mc/mark-all-dwim)
+
+;; visual-regexp
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+;; use multiple-cursors
+(define-key global-map (kbd "C-c m") 'vr/mc-mark)
+;; use visual-regexp-steroids's isearch instead of the built-in regexp isearch
+(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+
+;; hippie-expand
+(global-set-key (kbd "M-/") 'hippie-expand)
+
+;; projectile
+(setq projectile-keymap-prefix (kbd "C-c p"))
+
+;; Transpose stuff with M-t
+(global-set-key (kbd  "M-t") nil) ;; which used to be transpose-words
+(global-set-key (kbd  "M-t M-t") 'transpose-words)
+(global-set-key (kbd  "M-t l") 'transpose-lines)
+(global-set-key (kbd  "M-t w") 'transpose-words)
+(global-set-key (kbd  "M-t t") 'transpose-words)
+(global-set-key (kbd  "M-t s") 'transpose-sexps)
 
 ;; idomenu
 (global-set-key (kbd "C-x C-i") 'ido-imenu-push-mark)
@@ -185,6 +209,7 @@
 
 ;; yank current line
 (global-set-key (kbd "C-c C-q") "\M-m\C- \C-e\M-w\M-m")
+(global-set-key (kbd "M-w") 'save-region-or-current-line)
 
 ;; reload file similar to "C-x C-v"
 (global-set-key (kbd "C-x C-r") "\C-xrma\C-m\C-x\C-v\C-m\C-xrba\C-m")

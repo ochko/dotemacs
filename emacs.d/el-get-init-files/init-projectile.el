@@ -1,0 +1,6 @@
+(projectile-global-mode)
+(setq projectile-completion-system 'ido)
+(setq projectile-enable-caching t)
+(setq projectile-remember-window-configs t)
+(setq projectile-switch-project-action 'projectile-find-file)
+(setq projectile-find-dir-includes-top-level t)

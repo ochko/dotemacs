@@ -19,12 +19,17 @@
          smex
          expand-region
          multiple-cursors
+         visual-regexp-steroids
+         guide-key
          idomenu
+         flx
+         ido-vertical-mode
          paredit
          autopair
          anything
          thingatpt+
          magit
+         projectile
          rbenv
          pbcopy
          mo-git-blame
