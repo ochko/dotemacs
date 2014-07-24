@@ -15,6 +15,7 @@
          ag
          ace-jump-mode
          smart-tab
+         auto-complete
          smex
          expand-region
          multiple-cursors

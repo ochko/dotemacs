@@ -1,0 +1,6 @@
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-auto-start nil)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dictionaries")
+(add-to-list 'ac-user-dictionary-files "~/.emacs.d/ac-dictionary")
+(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
