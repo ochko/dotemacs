@@ -7,7 +7,6 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (autopair-mode)
-            ;; flycheck could be slow
             (flycheck-mode t)
             (local-set-key (kbd "RET") 'newline-and-indent)
             (js2-imenu-extras-mode)
