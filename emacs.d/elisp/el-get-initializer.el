@@ -21,6 +21,8 @@
          multiple-cursors
          visual-regexp-steroids
          guide-key
+         key-chord
+         space-chord
          idomenu
          flx
          ido-vertical-mode
