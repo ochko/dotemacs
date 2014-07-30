@@ -31,6 +31,7 @@
          thingatpt+
          magit
          projectile
+         emacs-dirtree
          rbenv
          pbcopy
          mo-git-blame
