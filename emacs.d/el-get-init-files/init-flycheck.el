@@ -1,5 +1,3 @@
-(setq flycheck-jshintrc "~/.jshintrc")
-
 ;; Language Supports
 
 ;; Ruby
