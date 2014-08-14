@@ -39,6 +39,7 @@
          flycheck
          js2-mode
          js2-refactor
+         nodejs-repl
          yeoman-backbone
          rspec-mode
          rinari
