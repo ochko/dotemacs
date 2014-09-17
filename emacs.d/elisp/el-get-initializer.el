@@ -54,6 +54,7 @@
          php-mode
          actionscript-mode
          feature-mode
+         ensime
          dired-details+
          color-theme-solarized
          mac-app-binding
