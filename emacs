@@ -207,6 +207,8 @@
 ;; align column with regexp pattern
 (global-set-key (kbd "C-x a r") 'align-regexp)
 
+(global-set-key (kbd "C-x r 5") 'replace-regexp-in-region)
+
 ;; yank current line
 (global-set-key (kbd "C-c C-q") "\M-m\C- \C-e\M-w\M-m")
 (global-set-key (kbd "M-w") 'save-region-or-current-line)

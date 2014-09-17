@@ -61,6 +61,18 @@ BEG and END (region to sort)."
        (buffer-file-name x))
      (buffer-list)))))
 
+;; Replace in Region
+(defun replace-regexp-in-region (start end)
+  (interactive "*r")
+  (save-excursion
+    (save-restriction
+      (let ((regexp (read-string "Regexp: "))
+            (to-string (read-string "Replacement: ")))
+        (narrow-to-region start end)
+        (goto-char (point-min))
+        (while (re-search-forward regexp nil t)
+          (replace-match to-string nil nil))))))
+
 ;; Taken from https://github.com/magnars/.emacs.d/blob/master/defuns/editing-defuns.el
 (defun copy-to-end-of-line ()
   (interactive)
