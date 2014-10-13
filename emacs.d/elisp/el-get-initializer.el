@@ -32,6 +32,7 @@
          magit
          projectile
          emacs-dirtree
+         multi-term
          rbenv
          pbcopy
          mo-git-blame
