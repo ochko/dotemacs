@@ -90,7 +90,8 @@
   (require 'ido))
 (ido-mode t)
 (setq ido-enable-flex-matching t
-      ido-use-virtual-buffers t)
+      ido-use-virtual-buffers t
+      ido-ignore-files '("config.ru"))
 
 (defun emacs-user-dir-concat (path)
   (file-name-as-directory
