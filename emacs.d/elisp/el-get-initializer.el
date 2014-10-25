@@ -59,6 +59,7 @@
          dired-details+
          color-theme-solarized
          mac-app-binding
+         langtool
          )))
   (when (file-directory-p el-get-install-dir)
     (add-to-list 'load-path el-get-install-dir)
