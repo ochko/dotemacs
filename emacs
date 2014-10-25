@@ -93,6 +93,9 @@
       ido-use-virtual-buffers t
       ido-ignore-files '("config.ru"))
 
+;; use aspell for ispell
+(setq ispell-program-name "aspell")
+
 (defun emacs-user-dir-concat (path)
   (file-name-as-directory
    (concat (file-name-as-directory user-emacs-directory) path)))
