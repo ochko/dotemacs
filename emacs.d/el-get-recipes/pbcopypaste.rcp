@@ -1,0 +1,5 @@
+(:name pbcopypaste
+       :description "An interface to OSX's pbcopy/pbpaster utility"
+       :type github
+       :pkgname "jeffgran/pbcopy.el"
+       :features "pbcopy")

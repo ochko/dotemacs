@@ -34,7 +34,7 @@
          emacs-dirtree
          multi-term
          rbenv
-         pbcopy
+         pbcopypaste
          mo-git-blame
          yasnippet
          flycheck
