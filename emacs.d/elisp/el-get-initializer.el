@@ -26,7 +26,7 @@
          flx
          ido-vertical-mode
          paredit
-         anything
+         helm
          thingatpt+
          magit
          projectile
