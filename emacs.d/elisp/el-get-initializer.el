@@ -26,7 +26,6 @@
          flx
          ido-vertical-mode
          paredit
-         autopair
          anything
          thingatpt+
          magit
