@@ -7,6 +7,5 @@
 (when (require 'rspec-mode nil 'noerror)
   (add-hook 'ruby-mode-hook
             (lambda ()
-              (autopair-mode)
               (local-set-key (kbd "C-c f r") 'rspec-find-spec-or-target-other-window)
               (local-set-key (kbd "RET") 'newline-and-indent))))
