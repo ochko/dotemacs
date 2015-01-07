@@ -52,6 +52,7 @@
          slim-mode
          markdown-mode
          php-mode
+         geben
          actionscript-mode
          feature-mode
          ensime
