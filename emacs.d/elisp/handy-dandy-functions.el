@@ -1,3 +1,12 @@
+(defun handy/dwim-at-point ()
+  "If there's an active selection, return that.
+Otherwise, get the symbol at point, as a string."
+  (cond ((use-region-p)
+         (buffer-substring-no-properties (region-beginning) (region-end)))
+        ((symbol-at-point)
+         (substring-no-properties
+          (symbol-name (symbol-at-point))))))
+
 (defun pull-next-line()
   "Pull the next line onto the end of the current line,
    compressing whitespace. (http://bit.ly/BnYG5)"
@@ -15,25 +24,6 @@
   (open-line 1)
   (next-line 1)
   (yank))
-
-(defun unique-lines (beg end)
-  "Unique lines in region.
-Called from a program, there are two arguments:
-BEG and END (region to sort)."
-  (interactive "r")
-  (save-excursion
-    (save-restriction
-      (narrow-to-region beg end)
-      (goto-char (point-min))
-      (while (not (eobp))
-        (kill-line 1)
-        (yank)
-        (let ((next-line (point)))
-          (while
-              (re-search-forward
-               (format "^%s" (regexp-quote (car kill-ring))) nil t)
-            (replace-match "" nil nil))
-          (goto-char next-line))))))
 
 (defun select-buffers-by-mode (mode)
   "Returns a list of buffers where their major-mode is equal to MODE"
@@ -100,5 +90,20 @@ BEG and END (region to sort)."
       (kill-ring-save (region-beginning) (region-end))
     (copy-line arg)))
 
+(defun insert-line-above ()
+  "Insert a newline above the current line and put point at beginning."
+  (interactive)
+  (unless (bolp)
+    (beginning-of-line))
+  (newline)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(defun insert-line-below ()
+  "Insert a newline below the current line and put point at beginning."
+  (interactive)
+  (unless (eolp)
+    (end-of-line))
+  (newline-and-indent))
 
 (provide 'handy-dandy-functions)
