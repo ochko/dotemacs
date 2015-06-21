@@ -57,7 +57,8 @@
          feature-mode
          ensime
          dired-details+
-         color-theme-solarized
+         color-theme
+         solarized-emacs
          mac-app-binding
          langtool
          writegood-mode
