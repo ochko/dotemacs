@@ -62,6 +62,7 @@
          mac-app-binding
          langtool
          writegood-mode
+         auctex
          )))
   (when (file-directory-p el-get-install-dir)
     (add-to-list 'load-path el-get-install-dir)
