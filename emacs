@@ -35,6 +35,7 @@
 ;; tabs
 (setq-default tab-width 2
               indent-tabs-mode nil)
+(setq css-indent-offset 2)
 
 ;; disable version control backends(cvs, svn, bzr, hg git etc..)
 (setq-default vc-handled-backends nil)
