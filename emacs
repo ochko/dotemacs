@@ -224,6 +224,8 @@
 ;; custom functions binding
 (global-set-key (kbd "M-J") 'pull-next-line) ;; overlaps paredit binding!
 (global-set-key (kbd "C-c C-w") 'duplicate-line)
+(global-set-key (kbd "M-p") 'insert-line-above)
+(global-set-key (kbd "M-n") 'insert-line-below)
 
 ;; Hooks
 
