@@ -9,6 +9,7 @@
 
 (setq org-agenda-show-log t
       org-agenda-todo-ignore-scheduled t
+      org-export-with-sub-superscripts nil
       org-agenda-todo-ignore-deadlines t)
 
 ;; fix windmove keys in org-mode
