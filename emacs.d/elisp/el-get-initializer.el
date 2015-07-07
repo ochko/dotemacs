@@ -2,7 +2,7 @@
 ;; Paste this into *scratch* buffer, hit C-j, and you have a working el-get.
 ;;
 ;; (url-retrieve
-;;  "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+;;  "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el"
 ;;  (lambda (s)
 ;;    (goto-char (point-max))
 ;;    (eval-print-last-sexp)))

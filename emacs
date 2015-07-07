@@ -250,4 +250,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-item-highlight ((t (:background "black")))))
+ '(magit-diff-added ((t (:foreground "green"))))
+ '(magit-diff-added-highlight ((t (:background "black" :foreground "green"))))
+ '(magit-diff-context-highlight ((t (:background "black" :foreground "blue"))))
+ '(magit-diff-file-heading-highlight ((t (:background "brightblue" :foreground "black" :weight bold))))
+ '(magit-diff-hunk-heading ((t (:background "cyan" :foreground "black"))))
+ '(magit-diff-removed ((t (:foreground "brightred"))))
+ '(magit-diff-removed-highlight ((t (:background "black" :foreground "red"))))
+ '(magit-section-highlight ((t (:background "black")))))
