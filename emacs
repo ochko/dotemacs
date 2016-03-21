@@ -87,6 +87,10 @@
   (require 'uniquify))
 (setq uniquify-buffer-name-style 'reverse)
 
+;; dired. use gnu ls(needs coreutls package)
+(setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
+(setq dired-listing-switches "-aBhl --group-directories-first")
+
 ;; ido-mode
 (eval-when-compile
   (require 'ido))
