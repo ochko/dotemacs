@@ -1,4 +1,6 @@
 *.elc
+ido.last
+recentf
 /auto-save-list
 /ac-comphist.dat
 /ac-dictionaries

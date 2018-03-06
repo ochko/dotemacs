@@ -6,5 +6,6 @@
 (key-chord-define-global "jl" 'ace-jump-line-mode)
 (key-chord-define-global "bf" 'switch-to-buffer)
 (key-chord-define-global "gs" 'magit-status)
+(key-chord-define-global "jb" 'bookmark-jump)
 
 (key-chord-define-global ";;" "\C-e;")

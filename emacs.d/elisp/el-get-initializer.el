@@ -16,31 +16,31 @@
       (el-get-user-inits (emacs-user-dir-concat "el-get-init-files"))
       (el-get-user-packages
        '(ace-jump-mode
-         actionscript-mode
+         ;;actionscript-mode
          ag
-         alchemist
          auto-complete
          coffee-mode
          color-theme
          deft
          dired-details+
-         elixir
+         dumb-jump
          emacs-dirtree
-         ember-mode
-         ensime
-         erlang-mode
+         ;;ember-mode
+         ;;ensime
          expand-region
-         feature-mode
+         ;;feature-mode
          flx
          flycheck
+         groovy-emacs-mode
          guide-key
          haml-mode
-         helm
+         ;;helm
          ido-vertical-mode
          idomenu
          js2-mode
          js2-refactor
          key-chord
+         langtool
          mac-app-binding
          magit
          markdown-mode
@@ -54,6 +54,7 @@
          php-mode
          projectile
          projectile-rails
+         rubocop
          rbenv
          rinari
          rspec-mode
@@ -64,9 +65,19 @@
          solarized-emacs
          thingatpt+
          visual-regexp-steroids
+         ;;writegood-mode
+         ;;synonyms
+         synosaurus
+         popup
          yaml-mode
          yasnippet
-         yeoman-backbone)))
+         ;;yeoman-backbone
+
+         ;;; Erlang/Elixir
+         ;;erlang-mode
+         ;;elixir
+         ;;alchemist
+         )))
 
   (add-to-list 'load-path el-get-install-dir)
 

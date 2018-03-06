@@ -1,12 +1,3 @@
-(defun handy/dwim-at-point ()
-  "If there's an active selection, return that.
-Otherwise, get the symbol at point, as a string."
-  (cond ((use-region-p)
-         (buffer-substring-no-properties (region-beginning) (region-end)))
-        ((symbol-at-point)
-         (substring-no-properties
-          (symbol-name (symbol-at-point))))))
-
 (defun pull-next-line()
   "Pull the next line onto the end of the current line,
    compressing whitespace. (http://bit.ly/BnYG5)"
@@ -106,4 +97,10 @@ Otherwise, get the symbol at point, as a string."
     (end-of-line))
   (newline-and-indent))
 
-(provide 'handy-dandy-functions)
+(defun unfill-region (beg end)
+  "Unfill the region, joining text paragraphs into a single logical line."
+  (interactive "*r")
+  (let ((fill-column (point-max)))
+    (fill-region beg end)))
+
+(provide 'my-functions)

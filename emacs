@@ -1,3 +1,9 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+(package-initialize)
+
 (server-start)
 
 ;; silence bell sound
@@ -90,6 +96,9 @@
 ;; dired. use gnu ls(needs coreutls package)
 (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
 (setq dired-listing-switches "-aBhl --group-directories-first")
+(setq dired-dwim-target t)
+;; Then, go to dired, split your window, & go to another dired directory.
+;; When press C to copy, the other dir in the split pane will be default destination.
 
 ;; ido-mode
 (eval-when-compile
@@ -97,7 +106,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t
       ido-use-virtual-buffers t
-      ido-ignore-files '("config.ru"))
+      ido-ignore-files '("config.ru" "coverage"))
 
 ;; use aspell for ispell
 (setq ispell-program-name "aspell")
@@ -111,12 +120,15 @@
     (add-to-list 'load-path user-elisp-dir)
     (require 'el-get-initializer)
     (require 'setup-hippie)
-    (require 'handy-dandy-functions)))
+    (require 'my-functions)))
 
 ;; ag
 (global-set-key (kbd "C-c C-a") 'ag-project)
 (global-set-key (kbd "C-c C-g") 'ag-project)
 (global-set-key (kbd "C-c C-f") 'ag-project-at-point)
+
+;; ruby-mode
+(setq ruby-insert-encoding-magic-comment nil)
 
 ;; ace-jump-mode
 ;; "C-c SPC"         ==> ace-jump-word-mode
@@ -151,9 +163,6 @@
 ;; use visual-regexp-steroids's isearch instead of the built-in regexp isearch
 (define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
-
-;; hippie-expand
-(global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; projectile
 (setq projectile-keymap-prefix (kbd "C-c p"))
@@ -205,6 +214,8 @@
 (global-set-key (kbd "M-1") 'delete-other-windows)   ;; same as C-x 1
 (global-set-key (kbd "M-k") 'kill-buffer-and-window) ;; same as C-x k
 
+;;(dumb-jump-mode)
+
 ;; Shorcuts
 (global-set-key (kbd "C-c o") 'occur)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
@@ -231,6 +242,13 @@
 (global-set-key (kbd "C-c C-w") 'duplicate-line)
 (global-set-key (kbd "M-p") 'insert-line-above)
 (global-set-key (kbd "M-n") 'insert-line-below)
+
+;; Cyrillic
+(global-set-key (kbd "M-ө") 'forward-word)
+(global-set-key (kbd "M-м") 'backward-word)
+(global-set-key (kbd "M-б") 'paredit-forward-kill-word)
+(global-set-key (kbd "M-л") 'downcase-word)
+(global-set-key (kbd "M-ё") 'capitalize-word)
 
 ;; Hooks
 
