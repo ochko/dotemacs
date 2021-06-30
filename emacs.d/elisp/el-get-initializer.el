@@ -19,64 +19,77 @@
          ;;actionscript-mode
          ag
          auto-complete
-         coffee-mode
+         ;;coffee-mode
          color-theme
-         deft
-         dired-details+
+         solarized-emacs
+         ;;deft
+         ;;dired-details+
          dumb-jump
-         emacs-dirtree
-         ;;ember-mode
+         ;;emacs-dirtree
          ;;ensime
          expand-region
          ;;feature-mode
          flx
          flycheck
-         groovy-emacs-mode
+         lsp-mode
+         lsp-ui
+         company-mode
+         company-lsp
+         ;;groovy-emacs-mode
          guide-key
-         haml-mode
+         ;;haml-mode
          ;;helm
          ido-vertical-mode
          idomenu
-         js2-mode
-         js2-refactor
+         web-mode
+         ;;js2-mode
+         ;;js2-refactor
+         tide
          key-chord
-         langtool
+         ;;langtool
          mac-app-binding
+         with-editor
+         forge
          magit
-         markdown-mode
+         transient
          mo-git-blame
-         multi-term
-         multiple-cursors
-         nodejs-repl
+         ;;multi-term
+         ;;multiple-cursors
+         ;;nodejs-repl
          org-mode
          paredit
          pbcopypaste
-         php-mode
+         ;;php-mode
          projectile
          projectile-rails
          rubocop
          rbenv
-         rinari
+         ;;rinari
          rspec-mode
          sass-mode
          slim-mode
+         markdown-mode
          smart-tab
          smex
-         solarized-emacs
          thingatpt+
-         visual-regexp-steroids
+         ;;visual-regexp-steroids
          ;;writegood-mode
          ;;synonyms
-         synosaurus
+         ;;synosaurus
          popup
          yaml-mode
          yasnippet
-         ;;yeoman-backbone
-
          ;;; Erlang/Elixir
          ;;erlang-mode
          ;;elixir
          ;;alchemist
+         go-mode
+         go-projectile
+         ;;; dart/flutter
+         ;;eglot
+         lsp-dart
+         dart-mode
+         ;;hover
          )))
 
   (add-to-list 'load-path el-get-install-dir)

@@ -2,4 +2,4 @@
        :description "Improves English writing"
        :type github
        :pkgname "bnbeckwith/writegood-mode"
-       :features "pbcopy")
+       :features "writegood-mode")

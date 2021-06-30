@@ -1,0 +1,6 @@
+(:name dart-mode
+       :description "Dart major mode"
+       :type github
+       :pkgname "bradyt/dart-mode"
+       :features "dart-mode"
+       :depends (lsp-mode))

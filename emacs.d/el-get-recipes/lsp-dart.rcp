@@ -1,0 +1,6 @@
+(:name lsp-dart
+       :description "Dart IDE using lsp-mode to connect to Dart Analysis Server"
+       :type github
+       :pkgname "emacs-lsp/lsp-dart"
+       :features "lsp-dart"
+       :depends (dap-mode dash lsp-mode))

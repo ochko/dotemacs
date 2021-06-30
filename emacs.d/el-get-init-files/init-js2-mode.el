@@ -3,6 +3,8 @@
 (setq js2-basic-offset 2)
 (setq js2-cleanup-whitespace t)
 (setq js2-mirror-mode nil)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
 
 (setq grunt-cmd "grunt --no-color --gruntfile ~/mobile/yeoman/Gruntfile.js devBuild")
 

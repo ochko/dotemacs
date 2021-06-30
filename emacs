@@ -43,6 +43,8 @@
               indent-tabs-mode nil)
 (setq css-indent-offset 2)
 (setq js-indent-level 2)
+(setq sh-basic-offset 2)
+(setq sh-indentation 2)
 
 ;; disable version control backends(cvs, svn, bzr, hg git etc..)
 (setq-default vc-handled-backends nil)
@@ -55,6 +57,13 @@
       inhibit-splash-screen t
       initial-scratch-message nil)
 (switch-to-buffer "**")
+
+(defun create-scratch-buffer-ruby nil
+  "create a scratch buffer in ruby mode"
+  (interactive)
+  (switch-to-buffer (get-buffer-create "*ruby*"))
+  (ruby-mode))
+(create-scratch-buffer-ruby)
 
 ;; case-insensitive search
 (setq case-fold-search t)
@@ -109,7 +118,8 @@
       ido-ignore-files '("config.ru" "coverage"))
 
 ;; use aspell for ispell
-(setq ispell-program-name "aspell")
+(setq ispell-program-name "aspell"
+      ispell-extra-args '("--sug-mode=ultra"))
 
 (defun emacs-user-dir-concat (path)
   (file-name-as-directory
@@ -119,21 +129,18 @@
   (when (file-directory-p user-elisp-dir)
     (add-to-list 'load-path user-elisp-dir)
     (require 'el-get-initializer)
-    (require 'setup-hippie)
     (require 'my-functions)))
 
+;; Color theme
+(load-theme 'solarized-dark t)
+
 ;; ag
-(global-set-key (kbd "C-c C-a") 'ag-project)
 (global-set-key (kbd "C-c C-g") 'ag-project)
-(global-set-key (kbd "C-c C-f") 'ag-project-at-point)
 
 ;; ruby-mode
 (setq ruby-insert-encoding-magic-comment nil)
 
 ;; ace-jump-mode
-;; "C-c SPC"         ==> ace-jump-word-mode
-;; "C-u C-c SPC"     ==> ace-jump-char-mode
-;; "C-u C-u C-c SPC" ==> ace-jump-line-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
@@ -147,36 +154,26 @@
 ;; expand-region
 (global-set-key (kbd "M-=") 'er/expand-region)
 
-;; multiple-cursors
-(global-set-key (kbd "C-x , l") 'mc/edit-lines)
-(global-set-key (kbd "C-x , n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-x , p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-x , a") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-x , e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-x , d") 'mc/mark-all-dwim)
-
 ;; visual-regexp
-(define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
+;; (define-key global-map (kbd "C-c r") 'vr/replace)
+;; (define-key global-map (kbd "C-c q") 'vr/query-replace)
 ;; use multiple-cursors
-(define-key global-map (kbd "C-c m") 'vr/mc-mark)
+;; (define-key global-map (kbd "C-c m") 'vr/mc-mark)
 ;; use visual-regexp-steroids's isearch instead of the built-in regexp isearch
-(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
-(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+;; (define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+;; (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;; projectile
-(setq projectile-keymap-prefix (kbd "C-c p"))
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-rails-mode-map (kbd "C-c l") 'projectile-rails-command-map)
 
 ;; Transpose stuff with M-t
-(global-set-key (kbd  "M-t") nil) ;; which used to be transpose-words
-(global-set-key (kbd  "M-t M-t") 'transpose-words)
-(global-set-key (kbd  "M-t l") 'transpose-lines)
-(global-set-key (kbd  "M-t w") 'transpose-words)
-(global-set-key (kbd  "M-t t") 'transpose-words)
-(global-set-key (kbd  "M-t s") 'transpose-sexps)
-
-;; idomenu
-(global-set-key (kbd "C-x C-i") 'ido-imenu-push-mark)
+;; (global-set-key (kbd  "M-t") nil) ;; which used to be transpose-words
+;; (global-set-key (kbd  "M-t M-t") 'transpose-words)
+;; (global-set-key (kbd  "M-t l") 'transpose-lines)
+;; (global-set-key (kbd  "M-t w") 'transpose-words)
+;; (global-set-key (kbd  "M-t t") 'transpose-words)
+;; (global-set-key (kbd  "M-t s") 'transpose-sexps)
 
 ;; pbcopy
 (global-set-key (kbd "C-c C-c") 'pbcopy-select-text)
@@ -192,20 +189,13 @@
 (global-set-key (kbd "M-s") 'magit-status) ;; overlaps paredit
 (global-set-key (kbd "M-g s") 'magit-status)
 ;; rinari
-(global-set-key (kbd "C-c C-v") 'rinari-find-view)
-
-;; js2-refactor
-(js2r-add-keybindings-with-prefix "C-c ,")
-;; eg. extract method with `C-c , em`
+;; (global-set-key (kbd "C-c C-v") 'rinari-find-view)
 
 ;; org-mode
-(global-set-key (kbd "C-c a") 'org-agenda)
+;; (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; mac-app-binding
-(global-set-key (kbd "C-c C-e") 'mac-open-with-textedit)
-
-;; Color theme
-(load-theme 'solarized-dark t)
+;; (global-set-key (kbd "C-c C-e") 'mac-open-with-textedit)
 
 ;; Jumping between buffers
 (global-set-key (kbd "C-o") "\C-xb\C-m")             ;; Cycle last two buffer
@@ -215,15 +205,24 @@
 (global-set-key (kbd "M-k") 'kill-buffer-and-window) ;; same as C-x k
 
 ;;(dumb-jump-mode)
+(global-set-key (kbd "M-g j") 'dumb-jump-go)
+(global-set-key (kbd "M-g i") 'dumb-jump-back)
 
 ;; Shorcuts
 (global-set-key (kbd "C-c o") 'occur)
-(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
-(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-c C-k") 'compile)
+
+(global-set-key (kbd "ESC <right>") 'next-match)
+(global-set-key (kbd "ESC <left>") 'pull-next-line)
+
+(global-set-key (kbd "ESC <down>") 'end-of-buffer)
+(global-set-key (kbd "ESC <up>") 'beginning-of-buffer)
 
 ;; insert new line and indeant
 (global-set-key (kbd "M-RET") "\C-e \C-m\C-i")
+
+;; open dired in current buffer's dir
+(global-set-key (kbd "M-'") 'dired-jump)
 
 ;; align column with regexp pattern
 (global-set-key (kbd "C-x a r") 'align-regexp)
@@ -232,7 +231,7 @@
 
 ;; yank current line
 (global-set-key (kbd "C-c C-q") "\M-m\C- \C-e\M-w\M-m")
-(global-set-key (kbd "M-w") 'save-region-or-current-line)
+;; (global-set-key (kbd "M-w") 'save-region-or-current-line)
 
 ;; reload file similar to "C-x C-v"
 (global-set-key (kbd "C-x C-r") "\C-xrma\C-m\C-x\C-v\C-m\C-xrba\C-m")
@@ -249,6 +248,10 @@
 (global-set-key (kbd "M-б") 'paredit-forward-kill-word)
 (global-set-key (kbd "M-л") 'downcase-word)
 (global-set-key (kbd "M-ё") 'capitalize-word)
+(global-set-key (kbd "M-Ь") 'beginning-of-buffer)
+(global-set-key (kbd "M-с") 'scroll-down-command)
+(global-set-key (kbd "M-ц") 'save-region-or-current-line)
+(global-set-key (kbd "C-ю") 'undo)
 
 ;; Hooks
 
@@ -263,16 +266,13 @@
               (buffer-disable-undo)
               (fundamental-mode))))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(magit-diff-added ((t (:foreground "green"))))
- '(magit-diff-added-highlight ((t (:background "black" :foreground "green"))))
- '(magit-diff-context-highlight ((t (:background "black" :foreground "blue"))))
- '(magit-diff-file-heading-highlight ((t (:background "brightblue" :foreground "black" :weight bold))))
- '(magit-diff-hunk-heading ((t (:background "cyan" :foreground "black"))))
- '(magit-diff-removed ((t (:foreground "brightred"))))
- '(magit-diff-removed-highlight ((t (:background "black" :foreground "red"))))
- '(magit-section-highlight ((t (:background "black")))))
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (el-get-init 'forge)
+            (org-reload)))
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (setq dired-details-hidden-string "")
+            (dired-hide-details-mode)
+            (dired-sort-toggle-or-edit)))

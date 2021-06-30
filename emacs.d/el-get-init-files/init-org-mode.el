@@ -7,13 +7,13 @@
       org-export-with-sub-superscripts nil
       org-agenda-todo-ignore-deadlines t
       org-pretty-entities nil
-      org-todo-keywords '((sequence "TODO" "WIP" "DONE"))
-      org-todo-keyword-faces '(("WIP" . (:foreground "blue" :weight bold))))
+      org-show-notification-handler 'message
+      org-todo-keywords '((sequence "TODO" "WIP" "DONE")))
 
 (add-hook 'org-mode-hook
           (lambda ()
             (setq truncate-lines nil)
-            (writegood-mode)
+            ;;(writegood-mode)
             (flyspell-mode)))
 
 ;; fix windmove keys in org-mode

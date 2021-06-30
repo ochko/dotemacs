@@ -1,4 +1,0 @@
-(:name ember-mode
-       :description "Emacs mode for navigating through emberjs projects"
-       :type github
-       :pkgname "madnificent/ember-mode")

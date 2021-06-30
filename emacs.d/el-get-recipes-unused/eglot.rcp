@@ -1,0 +1,6 @@
+(:name eglot
+       :description "Emacs Polyglot: client for Language Server Protocol servers"
+       :type github
+       :pkgname "joaotavora/eglot"
+       :features "eglot"
+       :depends (lsp-mode))

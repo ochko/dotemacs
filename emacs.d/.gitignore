@@ -1,4 +1,4 @@
-*.elc
+.*.elc
 ido.last
 recentf
 /auto-save-list
@@ -17,3 +17,10 @@ recentf
 /elpa
 /url
 /geben
+.dap-breakpoints
+.emacs.desktop
+.lsp-session-v1
+forge-database.sqlite
+mthesaur.cache
+mthesaur.txt
+transient
