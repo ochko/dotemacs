@@ -1,6 +1,0 @@
-(:name hover
-       :description "Flutter tool to run hover on emacs"
-       :type github
-       :pkgname "ericdallo/hover.el"
-       :features "hover"
-       :depends (dash))

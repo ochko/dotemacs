@@ -26,3 +26,4 @@ forge-database.sqlite
 mthesaur.cache
 mthesaur.txt
 transient
+/obsolete
