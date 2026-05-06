@@ -1,4 +1,4 @@
-;;; init-6-git.el -- magit
+;;; magit
 
 (use-package magit
   :bind (("M-s" . magit-status)
@@ -14,5 +14,4 @@
 (use-package forge
   :after magit)
 
-(provide 'init-6-git)
-;;; init-6-git.el ends here
+(provide '52-magit)

@@ -1,5 +1,3 @@
-;;; init-4-comp.el --- completion
-
 ;; (use-package ido
 ;;   :ensure nil                           ; built-in
 ;;   :custom
@@ -61,5 +59,4 @@
   (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
 
 
-(provide 'init-4-comp)
-;;; init-4-comp.el ends here
+(provide '12-ui-completion)

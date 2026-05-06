@@ -1,5 +1,4 @@
-;;; init-7-theme.el
-
+;; Use it when there is trouble in load-theme
 ;; (load-theme 'modus-vivendi t) ; built-in
 
 (use-package ef-themes
@@ -28,4 +27,4 @@
 ;;   :config
 ;;   (load-theme 'solarized-dark t))
 
-(provide 'init-7-theme)
+(provide '14-ui-theme)
