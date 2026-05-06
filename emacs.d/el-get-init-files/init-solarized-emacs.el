@@ -25,3 +25,5 @@
 (setq solarized-height-plus-2 1)
 (setq solarized-height-plus-3 1)
 (setq solarized-height-plus-4 1)
+
+(load-theme 'solarized-dark t)

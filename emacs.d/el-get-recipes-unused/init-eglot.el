@@ -1,1 +1,0 @@
-(add-to-list 'eglot-server-programs '(dart-mode . ("dart" "/usr/local/Caskroom/flutter/1.22.5/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot" " --lsp" "--client-id" "my-editor.my-plugin" "--client-version" "1.2")))

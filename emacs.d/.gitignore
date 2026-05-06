@@ -1,6 +1,7 @@
 .*.elc
-ido.last
-recentf
+/ido.last
+/recentf
+/history
 /auto-save-list
 /ac-comphist.dat
 /ac-dictionaries
@@ -8,6 +9,7 @@ recentf
 /projectile-bookmarks.eld
 /projectile.cache
 /tramp
+/tree-sitter
 /.smex-items
 /tramp
 /bookmarks

@@ -1,5 +1,5 @@
 ;; org-mode
-
+(require 'org-tempo)
 ;; add one WIP status between TODO and DONE
 (setq org-log-done t
       org-agenda-show-log t

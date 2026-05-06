@@ -1,11 +1,12 @@
 ;; Language Supports
-(require 'flycheck)
+;;(require 'flycheck)
+;;(setq flycheck-checker-error-threshold 1000)
+;;(flycheck-add-mode 'javascript-eslint 'js2-mode)
+;;(setq flycheck-rubocop-lint-only t)
 
-(setq flycheck-checker-error-threshold 1000)
 
 ;; Ruby
 ;; gem install rubocop ruby-lint
-(setq flycheck-rubocop-lint-only t)
 
 ;; CSS
 ;; npm install -g csslint
@@ -16,7 +17,6 @@
 ;; Javascript
 ;; npm install -g eslint
 ;; npm install -g jshint
-(flycheck-add-mode 'javascript-eslint 'js2-mode)
 
 ;; JSON
 ;; npm install -g jsonlint
