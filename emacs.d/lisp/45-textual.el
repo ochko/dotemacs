@@ -75,7 +75,15 @@
 ;;     https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.dic
 
 (use-package jinx
-  :hook (emacs-startup . global-jinx-mode)
+  :hook ((text-mode      . jinx-mode)
+         (markdown-mode  . jinx-mode)
+         (md-ts-mode     . jinx-mode)
+         (org-mode       . jinx-mode)
+         (latex-mode     . jinx-mode)
+         (LaTeX-mode     . jinx-mode)
+         (rst-mode       . jinx-mode))
+  ;; only enable for specific modes instead of globally
+  ;;     (emacs-startup . global-jinx-mode)
   :bind (("M-$"   . jinx-correct)
          ("C-M-$" . jinx-languages))
   :custom
