@@ -23,13 +23,14 @@
   :hook (terraform-mode . eglot-ensure)
   :custom
   (eglot-workspace-configuration
-   '(:gopls (:hoverKind "FullDocumentation"         ; https://go.dev/gopls/settings
+   ;; https://go.dev/gopls/settings
+   '(:gopls (:hoverKind "FullDocumentation"
              :usePlaceholders t)
      :terraform-ls (:ignoreSingleFileWarning t)))
   :config
-  (add-to-list 'eglot-server-programs
-               '((ruby-mode ruby-ts-mode) . ("ruby-lsp"))
-               '(terraform-mode . ("terraform-ls" "serve"))))
+  (dolist (entry '(((ruby-mode ruby-ts-mode) . ("ruby-lsp"))
+                   (terraform-mode . ("terraform-ls" "serve"))))
+    (add-to-list 'eglot-server-programs entry)))
 
 
 ;; Delete trailing white-spaces only in programming modes
