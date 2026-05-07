@@ -20,7 +20,8 @@
 
 ;; Enable Vertico.
 (use-package vertico
-  ;; :custom
+  :custom
+  (vertico-group-format nil)
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   ;; (vertico-count 20) ;; Show more candidates
   ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
@@ -29,7 +30,9 @@
   (vertico-mode))
 
 (use-package consult
-  :bind (("M-SPC" . consult-buffer)))
+  :bind (("M-SPC" . consult-buffer))
+  :custom
+  (consult-preview-key "M-."))
 
 ;; Emacs minibuffer configurations.
 (use-package emacs
@@ -54,7 +57,7 @@
   ;; (orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch))
   ;; (orderless-component-separator #'orderless-escapable-split-on-space)
   (completion-styles '(orderless basic))
-  (completion-category-overrides '((file (styles partial-completion))))
+  (completion-category-overrides '((file (styles basic partial-completion))))
   (completion-category-defaults nil) ;; Disable defaults, use our settings
   (completion-pcm-leading-wildcard t)) ;; Emacs 31: partial-completion behaves like substring
 
