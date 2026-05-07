@@ -1,6 +1,5 @@
 (use-package web-mode
   :mode (("\\.erb\\'"   . web-mode)
-         ("\\.html?\\'" . web-mode)
          ("\\.tsx\\'"   . web-mode))
   :custom
   (web-mode-markup-indent-offset 2)
@@ -10,6 +9,17 @@
                                  ("lineup-calls"   . nil)
                                  ("lineup-concats" . nil)
                                  ("lineup-ternary" . nil))))
+(use-package html-ts-mode
+  :ensure nil
+  :mode "\\.html?\\'")
+
+(use-package typescript-ts-mode
+  :ensure nil
+  :mode "\\.ts\\'")
+
+(use-package tsx-ts-mode
+  :ensure nil
+  :mode "\\.tsx\\'")
 
 (use-package slim-mode
   :mode "\\.slim\\'")

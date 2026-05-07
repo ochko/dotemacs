@@ -31,11 +31,6 @@
                '((ruby-mode ruby-ts-mode) . ("ruby-lsp"))
                '(terraform-mode . ("terraform-ls" "serve"))))
 
-;; Auto install tree-sitter detected languages: lua, ruby, bash, etc.
-;; Many built-in language modes like lua-ts-mode requires tree-sitter grammars.
-(use-package treesit-auto
-  :custom (treesit-auto-install 'prompt)
-  :config (global-treesit-auto-mode))
 
 ;; Delete trailing white-spaces only in programming modes
 ;; because in Markdown, Org, text-mode etc has meaningful trailing white-spaces.

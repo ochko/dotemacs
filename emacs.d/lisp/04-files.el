@@ -13,6 +13,10 @@
   :custom
   (vc-handled-backends nil))   ; using magit, skip built-in VC
 
+(use-package tramp
+  :ensure nil
+  :custom (tramp-default-method "ssh"))
+
 ;; ‘C-x r m’ – set
 ;; ‘C-x r b’ – jump
 ;; ‘C-x r l’ – list

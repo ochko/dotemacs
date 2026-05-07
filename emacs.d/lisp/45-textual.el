@@ -1,26 +1,21 @@
-(use-package yaml-mode
-  :mode ("\\.ya?ml\\'" . yaml-mode)  ; .yml and .yaml
-  :custom (yaml-indent-offset 2))
+;; Emacs 31 will have markdown-ts-mode, until then:
+(use-package md-ts-mode
+  :mode "\\.md\\'"
+  :hook ((md-ts-mode . visual-line-mode)
+         (md-ts-mode . jinx-mode)))
 
-;; (use-package yaml-ts-mode
-;;   :ensure nil   ; built-in
-;;   :mode "\\.ya?ml\\'")
+;;(use-package markdown-mode
+;;  :mode (("\\.md\\'"       . markdown-mode)
+;;         ("\\.markdown\\'" . markdown-mode)
+;;         ("README\\.md\\'" . gfm-mode))
+;;  :hook ((markdown-mode . visual-line-mode)    ; soft-wrap long lines
+;;         (markdown-mode . flyspell-mode))      ; spell-check prose
+;;  :custom
+;;  (markdown-command "multimarkdown")           ; markdoc for https://github.com/ochko/markdoc
+;;  (markdown-fontify-code-blocks-natively t)    ; syntax-highlight ```ruby etc.
+;;  (markdown-header-scaling t)                  ; bigger fonts for # ## ###
+;;  (markdown-asymmetric-header t))              ; cleaner header underlines
 
-
-(use-package markdown-mode
-  :mode (("\\.md\\'"       . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode)
-         ("README\\.md\\'" . gfm-mode))
-  :hook ((markdown-mode . visual-line-mode)    ; soft-wrap long lines
-         (markdown-mode . flyspell-mode))      ; spell-check prose
-  :custom
-  (markdown-command "multimarkdown")
-  (markdown-fontify-code-blocks-natively t)    ; syntax-highlight ```ruby etc.
-  (markdown-header-scaling t)                  ; bigger fonts for # ## ###
-  (markdown-asymmetric-header t))              ; cleaner header underlines
-
-;; For markdoc from https://github.com/ochko/markdoc
-;; (setq markdown-command "markdoc")
 
 ;; TeX/LaTex authoring
 (use-package tex
@@ -42,6 +37,7 @@
          ("C-c l" . org-store-link))   ; store link to current location
   :hook ((org-mode . visual-line-mode) ; soft-wrap long lines
          (org-mode . org-indent-mode)) ; visual indent under headings
+
   :custom
   (org-startup-folded 'content)        ; show headings, hide bodies on open
   (org-hide-emphasis-markers t)        ; hide *bold* and /italic/ markers
@@ -57,6 +53,15 @@
   (org-todo-keywords
    '((sequence "TODO(t)" "WIP(p)" "DOING(g)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
 
+(use-package org-modern
+  :hook ((org-mode . org-modern-mode)
+         (org-agenda-finalize . org-modern-agenda))
+  :custom
+  (org-modern-star 'replace)             ; default; alternative: 'fold (more compact)
+  (org-modern-table-vertical 1)          ; thinner vertical lines
+  (org-modern-block-fringe nil))         ; cleaner src blocks (no fringe stripe)
+
+;;
 ;; Spell check via jinx + Enchant (using hunspell as backend)
 ;;
 ;; Setup:

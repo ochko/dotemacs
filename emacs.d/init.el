@@ -19,6 +19,7 @@
 (require '24-nav-buff)
 
 (require '40-coding-support)
+(require '41-treesit)
 (require '42-web)
 (require '45-textual)
 (require '45-ruby)
@@ -27,3 +28,20 @@
 (require '52-magit)
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(ag auctex avy clipetty consult corfu ef-themes emmet-mode
+        expand-region forge go-mode jinx kkp md-ts-mode orderless
+        org-modern org-modern-indent reverse-im sass-mode scss-mode
+        slim-mode solarized-theme terraform-mode treesit-auto vertico
+        web-mode yaml-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

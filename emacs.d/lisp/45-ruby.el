@@ -1,10 +1,10 @@
 ;;; Ruby editing setup -*- lexical-binding: t -*-
 
-(use-package ruby-mode
+(use-package ruby-ts-mode
   :ensure nil   ; built-in
-  :mode (("\\.\\(rb\\|rake\\|ru\\|gemspec\\|jbuilder\\)\\'" . ruby-mode)
-         ("/\\(Capfile\\|Gemfile\\|Guardfile\\|Rakefile\\|Dangerfile\\|Kaiserfile\\|Brewfile\\|Vagrantfile\\|Berksfile\\|Podfile\\)\\'" . ruby-mode))
-  :hook (ruby-mode . superword-mode)
+  :mode (("\\.\\(rb\\|rake\\|ru\\|gemspec\\|jbuilder\\)\\'" . ruby-ts-mode)
+         ("/\\(Capfile\\|Gemfile\\|Guardfile\\|Rakefile\\|Dangerfile\\|Kaiserfile\\|Brewfile\\|Vagrantfile\\|Berksfile\\|Podfile\\)\\'" . ruby-ts-mode))
+  :hook (ruby-ts-mode . superword-mode)
   :custom
   (ruby-insert-encoding-magic-comment nil))
 
