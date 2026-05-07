@@ -5,6 +5,7 @@
 ;; ----------------------------------------
 (use-package which-key
   :ensure nil
+  :diminish     ; hide modeline
   :init (which-key-mode))
 
 ;; ----------------------------------------

@@ -8,10 +8,10 @@
   (auto-save-list-file-name nil)
   (enable-local-variables :safe))
 
+;; Using magit, but we need it to project.el work properly. Enabling only Git
 (use-package vc
   :ensure nil
-  :custom
-  (vc-handled-backends nil))   ; using magit, skip built-in VC
+  :custom (vc-handled-backends '(Git)))
 
 (use-package tramp
   :ensure nil
