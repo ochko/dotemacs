@@ -52,4 +52,4 @@
   :ensure nil
   :mode "\\COMMIT_EDITMSG\\'")
 
-(provide '45-others)
+(provide '47-others)

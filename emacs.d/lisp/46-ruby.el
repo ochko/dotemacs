@@ -17,4 +17,4 @@
 
 (add-hook 'after-init-hook #'my/ensure-ruby-scratch)
 
-(provide '45-ruby)
+(provide '46-ruby)

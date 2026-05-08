@@ -17,19 +17,6 @@
 ;;  (markdown-asymmetric-header t))              ; cleaner header underlines
 
 
-;; TeX/LaTex authoring
-(use-package tex
-  :ensure auctex
-  :hook ((LaTeX-mode . turn-on-reftex)
-         (LaTeX-mode . visual-line-mode)
-         (LaTeX-mode . flyspell-mode)
-         (LaTeX-mode . LaTeX-math-mode))
-  :custom
-  (TeX-auto-save t)
-  (TeX-parse-self t)
-  (TeX-master nil)
-  (reftex-plug-into-AUCTeX t))
-
 (use-package org
   :ensure nil
   :bind (("C-c a" . org-agenda)        ; show agenda
@@ -114,4 +101,4 @@
                  org-meta-line
                  org-property-value)))
 
-(provide '45-textual)
+(provide '45-edit)
