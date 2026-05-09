@@ -48,8 +48,4 @@
   :ensure nil
   :mode "\\.sh\\'")
 
-(use-package git-commit-ts-mode
-  :ensure nil
-  :mode "\\COMMIT_EDITMSG\\'")
-
 (provide '47-others)

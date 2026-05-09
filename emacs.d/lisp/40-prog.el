@@ -33,7 +33,7 @@
                (side . right)
                (window-width . 0.4)))
 
-;; Ruby: gem install ruby-lsp rubocop
+;; Ruby: gem install ruby-lsp ruby-lsp-rails rubocop
 ;;      or (standard ruby-lsp-standard) or (rubyfmt ruby-lsp-rubyfmt) instead of rubocop
 ;;
 ;; Terraform: install terraform-ls from homebrew tap or official Hashicorp website

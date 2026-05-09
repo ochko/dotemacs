@@ -1,5 +1,9 @@
 ;;; magit
 
+(use-package git-commit-ts-mode
+  :ensure nil
+  :mode "\\COMMIT_EDITMSG\\'")
+
 (use-package magit
   :bind (("M-s" . magit-status)
          ("M-g s" . magit-status)
