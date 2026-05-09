@@ -1,4 +1,4 @@
-;;; Navigating between files, directories, and projects
+;;; Navigating between files, directories, and projects -*- lexical-binding: t -*-
 
 ;; dired
 (when-let ((gls (executable-find "gls")))

@@ -1,4 +1,4 @@
-;;; Navigating and browsing within buffers
+;;; Navigating and browsing within buffers -*- lexical-binding: t -*-
 
 ;; jump withing open buffer(s)
 (use-package avy

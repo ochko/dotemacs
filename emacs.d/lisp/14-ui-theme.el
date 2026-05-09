@@ -1,3 +1,5 @@
+;;; Theme -*- lexical-binding: t -*-
+
 ;; Use it when there is trouble in load-theme
 ;; (load-theme 'modus-vivendi t) ; built-in
 

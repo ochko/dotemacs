@@ -1,4 +1,4 @@
-;;; init.el --- entry point
+;;; init.el --- entry point -*- lexical-binding: t -*-
 
 ;;(setq debug-on-error t)
 
@@ -23,14 +23,16 @@
 (require '23-nav-dir)
 (require '24-nav-buff)
 
-(require '40-prog)
-(require '41-treesit)
-(require '42-web)
-(require '43-tex)
-(require '45-edit)
-(require '46-ruby)
-(require '47-others)
+(require '31-git)
+(require '33-prog)
+(require '35-treesit)
 
-(require '52-magit)
+(require '41-infra)
+(require '42-ruby)
+(require '43-go)
+(require '48-web)
+
+(require '52-edit)
+(require '54-tex)
 
 ;;; init.el ends here

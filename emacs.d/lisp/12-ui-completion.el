@@ -1,3 +1,5 @@
+;;; UI completion -*- lexical-binding: t -*-
+
 ;; (use-package ido
 ;;   :ensure nil                           ; built-in
 ;;   :custom

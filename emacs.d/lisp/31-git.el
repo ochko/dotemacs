@@ -1,4 +1,4 @@
-;;; magit
+;;; GIT -*- lexical-binding: t -*-
 
 (use-package git-commit-ts-mode
   :ensure nil
@@ -18,4 +18,4 @@
 (use-package forge
   :after magit)
 
-(provide '52-magit)
+(provide '31-git)

@@ -1,4 +1,5 @@
-;; TeX/LaTex authoring
+;;; TeX/LaTex authoring -*- lexical-binding: t -*-
+
 (use-package tex
   :ensure auctex
   :hook ((LaTeX-mode . turn-on-reftex)
@@ -28,4 +29,4 @@
 
 (define-key LaTeX-mode-map (kbd "C-c v") #'my/tex-compile-and-view)
 
-(provide '43-tex)
+(provide '54-tex)

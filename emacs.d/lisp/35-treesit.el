@@ -1,4 +1,4 @@
-;;; Tree-sitter grammars
+;;; Tree-sitter grammars -*- lexical-binding: t -*-
 
 ;; for installing tree-sitter grammars with M-x treesit-auto-install-all
 (use-package treesit-auto
@@ -22,4 +22,4 @@
   (add-to-list 'major-mode-remap-alist mapping))
 
 
-(provide '41-treesit)
+(provide '35-treesit)

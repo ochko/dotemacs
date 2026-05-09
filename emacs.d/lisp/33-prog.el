@@ -1,4 +1,4 @@
-;;; General coding/programming support
+;;; General coding/programming support -*- lexical-binding: t -*-
 
 ;; copy/paste fro-to OS clipboard through tty signalling
 (use-package clipetty
@@ -14,31 +14,14 @@
   :init (global-corfu-mode)
   :custom (corfu-auto t))
 
-(use-package eldoc
-  :ensure nil
-  :diminish  ; hide modeline status
-  :init
-  ;; don't auto-enable everywhere
-  (global-eldoc-mode -1)
-  :bind ("C-c d" . eldoc-doc-buffer)
-  :config
-  ;; Even when eldoc-mode is on, never write to the echo area
-  (remove-hook 'eldoc-display-functions 'eldoc-display-in-echo-area))
-
-;; eldoc buffer opens in a 40%-wide side window on the right
-(add-to-list 'display-buffer-alist
-             '("\\*eldoc\\*"
-               (display-buffer-reuse-window
-                display-buffer-in-side-window)
-               (side . right)
-               (window-width . 0.4)))
-
-;; Ruby: gem install ruby-lsp ruby-lsp-rails rubocop
-;;      or (standard ruby-lsp-standard) or (rubyfmt ruby-lsp-rubyfmt) instead of rubocop
-;;
-;; Terraform: install terraform-ls from homebrew tap or official Hashicorp website
-;;
-;; Go: install from https://go.dev/gopls/#installation
+;; Ruby:
+;;   gem install ruby-lsp ruby-lsp-rails rubocop
+;;      or (standard ruby-lsp-standard)
+;;      or (rubyfmt ruby-lsp-rubyfmt) instead of rubocop
+;; Terraform:
+;;   brew install terraform-ls
+;; Go:
+;;   go install golang.org/x/tools/gopls@latest
 ;;
 (use-package eglot
   :ensure nil  ; built-in on Emacs 29+
@@ -79,6 +62,25 @@
   ;; Replaces " Flymake" with " FM"
   (flymake-mode-line-lighter " ⁉"))
 
+(use-package eldoc
+  :ensure nil
+  :diminish  ; hide modeline status
+  :init
+  ;; don't auto-enable everywhere
+  (global-eldoc-mode -1)
+  :bind ("C-c d" . eldoc-doc-buffer)
+  :config
+  ;; Even when eldoc-mode is on, never write to the echo area
+  (remove-hook 'eldoc-display-functions 'eldoc-display-in-echo-area))
+
+;; eldoc buffer opens in a 40%-wide side window on the right
+(add-to-list 'display-buffer-alist
+             '("\\*eldoc\\*"
+               (display-buffer-reuse-window
+                display-buffer-in-side-window)
+               (side . right)
+               (window-width . 0.4)))
+
 
 ;; Delete trailing white-spaces only in programming modes
 ;; because in Markdown, Org, text-mode etc has meaningful trailing white-spaces.
@@ -86,4 +88,4 @@
           (lambda ()
             (add-hook 'before-save-hook #'delete-trailing-whitespace nil t)))
 
-(provide '40-prog)
+(provide '33-prog)

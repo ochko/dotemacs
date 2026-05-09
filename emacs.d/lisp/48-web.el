@@ -1,3 +1,5 @@
+;;; HTML/CSS/JS -*- lexical-binding: t -*-
+
 (use-package web-mode
   :mode (("\\.erb\\'"   . web-mode)
          ("\\.tsx\\'"   . web-mode))
@@ -36,4 +38,4 @@
          (css-mode . emmet-mode)))
 
 
-(provide '42-web)
+(provide '48-web)
