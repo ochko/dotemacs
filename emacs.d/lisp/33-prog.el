@@ -59,8 +59,12 @@
 
 (use-package flymake
   :custom
-  ;; Replaces " Flymake" with " FM"
+  ;; Replaces " Flymake"
   (flymake-mode-line-lighter " ⁉"))
+
+;; Legacy modes(scss-mode) try to modify these variable. Just make it exist.
+(setq flymake-allowed-file-name-masks nil)
+(setq flymake-err-line-patterns nil)
 
 (use-package eldoc
   :ensure nil
