@@ -11,7 +11,7 @@
   :ensure nil
   :mode "\\.go\\'"
   :hook (go-ts-mode . my/go-mode-eglot-hooks)
-  :custom (go-ts-mode-indent-offset 4))
+  :custom (go-ts-mode-indent-offset 2))
 
 ;; Go.mod files
 (use-package go-mod-ts-mode
