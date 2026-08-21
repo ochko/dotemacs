@@ -3,6 +3,9 @@
 (use-package emacs
   :ensure nil
   :init
+  ;; Ensure terminal title is consistent
+  (setq frame-title-format "Emacs"
+        icon-title-format "Emacs")
   ;; Behavior
   (setq visible-bell t
         echo-keystrokes 0.1           ; turn down the time to echo keystrokes

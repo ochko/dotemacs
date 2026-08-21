@@ -24,14 +24,23 @@
   :custom
   (project-switch-commands 'project-find-file))
 
-;; search with ag
-(use-package ag
+;; search with rg
+(use-package rg
   :custom
-  (ag-reuse-buffers nil)
-  ;; (ag-highlight-search t)
-  ;; (ag-reuse-buffers t)
-  :bind (("C-c g" . ag-project)
+  (rg-show-header nil)
+  ;; (rg-buffer-name 'search-term) ; new buffer per search term, mimics ag-reuse-buffers nil
+  :bind (("C-c g" . rg-project)
          (:map my-fn-map
-               ("-" . ag-project))))
+               ("-" . rg-project))))
+
+;; ;; search with ag
+;; (use-package ag
+;;   :custom
+;;   (ag-reuse-buffers nil)
+;;   ;; (ag-highlight-search t)
+;;   ;; (ag-reuse-buffers t)
+;;   :bind (("C-c g" . ag-project)
+;;          (:map my-fn-map
+;;                ("-" . ag-project))))
 
 (provide '23-nav-dir)
