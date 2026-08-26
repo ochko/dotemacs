@@ -16,6 +16,7 @@
                    (javascript-mode     . js-ts-mode)
                    (js2-mode            . js-ts-mode)
                    (js-json-mode        . json-ts-mode)
+                   (markdown-mode       . markdown-ts-mode)
                    (mhtml-mode          . html-ts-mode)
                    (python-mode         . python-ts-mode)
                    (sgml-mode           . html-ts-mode)))
