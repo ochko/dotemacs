@@ -12,7 +12,7 @@
   :custom
   (dired-recursive-copies 'always)
   (dired-recursive-deletes 'always)
-  (dired-listing-switches "-aBhlt --group-directories-first") ; -t time sort
+  (dired-listing-switches "-DhagGt --group-directories-first --time-style=iso -I .git -I .DS_Store")
   (dired-dwim-target t)                          ; default to other pane's dir for copy/move
   :hook (dired-mode . dired-hide-details-mode))  ; less visual noise
 
