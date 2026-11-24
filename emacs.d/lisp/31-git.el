@@ -12,7 +12,10 @@
   :custom
   (magit-git-executable "/opt/homebrew/bin/git")
   (magit-push-current-set-remote-if-missing t)
+  ;; Disable word-diffs for files with very long lines or large size
+  (magit-diff-refine-hunk 'conditionally)
   :config
+  (magit-show-long-lines-warning nil)
   (magit-auto-revert-mode -1))
 
 (use-package forge
